@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+.todo-list {
+  list-style: none;
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo-list li input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
