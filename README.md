@@ -10,3 +10,10 @@ Currently, two official plugins are available:
 ```bash
 git clone https://github.com/Nigeljanssens220/workshop-react.git
 ```
+
+## Code Challenge
+
+1. Create a new component called `TodoList` that will render a list of todos. The list should contain a list item for each todo, a button to delete the todo and a checkbox to mark the todo as completed.
+2. Handle the actual logic of adding, deleting and completing todos.
+3. Bonus: Add some fancy CSS styling!
+
