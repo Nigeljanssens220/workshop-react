@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 
 /**
@@ -11,6 +11,7 @@ import "./App.css";
  */
 
 function App() {
+  const inputRef = useRef();
   const [todos, setTodos] = useState([
     { id: 1, text: "Learn HTML", completed: false },
     { id: 2, text: "Learn CSS", completed: false },
@@ -19,9 +20,12 @@ function App() {
     { id: 5, text: "Learn Nextjs", completed: false },
   ]);
 
-  // TODO: Add logic to handle adding  todos
-  const handleAddTodo = () => {
-    console.log("adding todo");
+  // TODO: Add logic to handle adding todos
+  const handleAddTodo = (e) => {
+    e.preventDefault();
+
+    const todoText = inputRef.current.value;
+    console.log("adding todo", todoText);
   };
 
   // TODO: Add logic to handle deleting todos
@@ -39,8 +43,8 @@ function App() {
       Todos
       {/* List of todos */}
       <ol className="todo-list">
-        {/* List of todo items here. The list should contain a list item for each todo, 
-        a button to delete the todo and a checkbox to mark the todo as completed */}
+        <input ref={inputRef} type="text" placeholder="Add todo" />
+        <button onClick={handleAddTodo}>Add</button>
       </ol>
     </div>
   );
